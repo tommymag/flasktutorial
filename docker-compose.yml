@@ -1,0 +1,9 @@
+version: "3"
+services:
+    web:
+        build: ./web
+        ports:
+            - "5000:8000"
+        command: ./entrypoint.sh
+        volumes:
+            - ./web:/web
