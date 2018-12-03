@@ -1,5 +1,7 @@
-from flask import Flask
-app = Flask(__name__)
+
+# call create_app() in app/__init__.py
+from app import create_app
+app = create_app()
 
 
 @app.route('/')
@@ -24,4 +26,8 @@ def info_date():
     return "Current Datetime : %s" % ts
 
 
+@app.route('/info/config')
+def app_config():
+    cnf = dict(app.config)
+    return "Current Config : %s" % cnf
 
