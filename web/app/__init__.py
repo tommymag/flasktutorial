@@ -1,7 +1,9 @@
 
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from config import config
 
+bootstrap = Bootstrap()
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -10,19 +12,16 @@ def create_app(config_name):
     config[config_name].init_app(app)
 
     init_logging(app)
-    init_modules(app)
 
-    return app
+    bootstrap.init_app(app)
 
-def init_modules(app):
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     from .item import item as item_blueprint
     app.register_blueprint(item_blueprint)
 
-    import logging
-    logging.debug("init_modules()")
+    return app
 
 
 def init_logging(app):
