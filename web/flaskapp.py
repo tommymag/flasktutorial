@@ -35,7 +35,7 @@ def hello_db():
     #stmt = "SELECT CONNECTION_ID()"  # Return the connection ID (thread ID) for the connection
     #stmt = "SELECT CURRENT_USER()"   # The authenticated user name and host name
     #stmt = "SELECT DATABASE()"       # Return the default (current) database name
-    stmt = "SHOW TABLES"             # Return list of non-temporary tables in current database
+    #stmt = "SHOW TABLES"             # Return list of non-temporary tables in current database
 
     #stmt = "show create database %s;" % current_app.config['MYSQL_DB']
     #stmt = "show grants for %s;" % current_app.config['MYSQL_USER']
