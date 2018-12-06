@@ -40,7 +40,7 @@ def hello_db():
     #stmt = "show create database %s;" % current_app.config['MYSQL_DB']
     #stmt = "show grants for %s;" % current_app.config['MYSQL_USER']
 
-    stmt = "select * from item"             # Return list of non-temporary tables in current database
+    #stmt = "select * from item"             # Return list of non-temporary tables in current database
 
     #import pdb; pdb.set_trace()
     eng = db.create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'])
